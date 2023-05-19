@@ -1,0 +1,38 @@
+http:
+  addr: 0.0.0.0
+  port: 9012
+
+
+
+db:
+  driver: sqlite  # mysql / postgres / sqlite ...
+  dsn: ./example.db
+
+#
+#db:
+#  driver: mysql  # mysql / postgres / sqlite ...
+#  dsn: user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local
+
+
+seo:
+  full_host: http://localhost:9012
+  host: localhost:9012
+  cdn: http://localhost:9012
+  title: example website
+  key_words: "key_words,key_words,key_words"
+  description: "description,description,description"
+  copyright: 'Copyright &copy; 2019. Example(<a href="http://localhost:9012">http://localhost:9012</a>). All Rights Reserved'
+  Links:
+    "/ads.txt": "google-ads.txt file"
+    "/foo": "bar"
+  friend_link:
+    - name: 百度
+      url: https://www.baidu.com
+      direct: true
+    - name: google
+      url: https://www.baidu.com
+      direct: false
+  header_script: |
+      <script>console.log('I am header.')</script>
+  footer_script: | 
+      <script>console.log('I am footer.')</script>

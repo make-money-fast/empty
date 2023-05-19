@@ -1,0 +1,15 @@
+{{ define "redirect" }}
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="3;url={{ .url }}">
+    </head>
+    {{ .seo.HeaderScript | html }}
+    <body>
+
+    跳转中 ...
+
+    {{ .seo.FooterScript  | html }}
+    </body>
+    </html>
+{{ end }}
