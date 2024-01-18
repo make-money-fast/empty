@@ -14,8 +14,7 @@ var (
 	_db *gorm.DB
 )
 
-func Load() *gorm.DB {
-	conf := config.Load()
+func Load(conf *config.Config) *gorm.DB {
 	o.Do(func() {
 		var (
 			db  *gorm.DB

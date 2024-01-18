@@ -11,14 +11,8 @@ import (
 	"log"
 )
 
-func Start() {
-	conf := config.Load()
+func Start(conf *config.Config) error {
 	g := gin.Default()
-	defer func() {
-		addr := fmt.Sprintf("%s:%d", conf.Http.Addr, conf.Http.Port)
-		log.Println("http://" + addr)
-		g.Run(addr)
-	}()
 
 	g.SetFuncMap(templates.FuncMap)
 	g.LoadHTMLGlob("templates/*.gohtml")
@@ -38,5 +32,7 @@ func Start() {
 	g.GET("/redirect", ctrl2.Redirect)
 	g.GET("/", ctrl2.Index)
 
-	// 路由 ...
+	addr := fmt.Sprintf("%s:%d", conf.Http.Addr, conf.Http.Port)
+	log.Println("http://" + addr)
+	return g.Run(addr)
 }
