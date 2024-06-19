@@ -49,10 +49,6 @@
     -webkit-overflow-scrolling: touch;
 }
 
-body {
-    background-image: linear-gradient(180deg, #eee, #fff 100px, #fff);
-}
-
 .container {
     max-width: 960px;
 }

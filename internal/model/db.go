@@ -44,6 +44,8 @@ func Load(conf *config.Config) *gorm.DB {
 func syncTable(db *gorm.DB) {
 	if err := db.AutoMigrate(
 		&Article{},
+		&User{},
+		&UserCoinHistory{},
 	); err != nil {
 		log.Fatal(err)
 	}

@@ -7,8 +7,10 @@ type Config struct {
 }
 
 type Http struct {
-	Addr string `json:"addr"`
-	Port int    `json:"port"`
+	Addr         string   `json:"addr"`
+	Port         int      `json:"port"`
+	TemplatePath string   `json:"templatePath"`
+	LangFiles    []string `json:"langFiles"`
 }
 
 type FriendLink struct {

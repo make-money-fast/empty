@@ -10,3 +10,11 @@ func Index(ctx *gin.Context) {
 		"Foo": "bar",
 	})
 }
+
+func Login(ctx *gin.Context) {
+	templates.Html(ctx, "login", gin.H{})
+}
+
+func Register(ctx *gin.Context) {
+	templates.Html(ctx, "register", gin.H{})
+}
